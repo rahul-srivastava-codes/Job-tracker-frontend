@@ -1,15 +1,20 @@
 import React from "react";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Home from "./pages/Home";
+import JobForm from "./components/JobForm";
+import JobList from "./components/JobList";
 
-function App() {
+const App = () => {
+  const [refresh, setRefresh] = React.useState(false);
+
+  const triggerRefresh = () => setRefresh((prev) => !prev);
+
   return (
-    <Router>
-      <Routes>
-        <Route path="/" element={<Home />} />
-      </Routes>
-    </Router>
+    <div className="min-h-screen bg-gray-100 p-6">
+      <div className="max-w-5xl mx-auto">
+        <JobForm onJobAdded={triggerRefresh} />
+        <JobList refresh={refresh} />
+      </div>
+    </div>
   );
-}
+};
 
 export default App;

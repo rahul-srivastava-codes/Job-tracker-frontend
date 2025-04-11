@@ -1,26 +1,9 @@
 import axios from "axios";
 
-const API_URL = import.meta.env.VITE_API_URL;
+const API_URL = import.meta.env.VITE_BACKEND_URL + "/api/jobs";
 
-const getJobs = async () => {
-  try {
-    const res = await axios.get(API_URL);
-    console.log("Jobs Response:", res); // ✅ Add this line
-    return res;
-  } catch (err) {
-    console.error("Error in getJobs():", err);
-    throw err;
-  }
-};
-
+const getJobs = () => axios.get(API_URL);
 const addJob = (jobData) => axios.post(API_URL, jobData);
-const updateJobStatus = (id, status) =>
-  axios.patch(`${API_URL}/${id}`, { status });
 const deleteJob = (id) => axios.delete(`${API_URL}/${id}`);
 
-export default {
-  getJobs,
-  addJob,
-  updateJobStatus,
-  deleteJob,
-};
+export default { getJobs, addJob, deleteJob };
