@@ -1,5 +1,5 @@
 import React from "react";
-import jobService from "../services/jobService";
+import jobService from "../services/JobService";
 
 const JobCard = ({ job, onStatusUpdated, onDelete }) => {
   const handleStatusChange = async (e) => {

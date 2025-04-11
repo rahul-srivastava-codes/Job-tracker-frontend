@@ -1,6 +1,6 @@
 // JobForm.jsx
 import React, { useState } from "react";
-import jobService from "../services/jobService";
+import jobService from "../services/JobService";
 
 const JobForm = ({ onJobAdded }) => {
   const [form, setForm] = useState({
