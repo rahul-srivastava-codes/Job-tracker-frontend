@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const API_URL = "http://localhost:5000/api/jobs";
+const API_URL = "https://job-tracker-backend-y9pr.onrender.com/api/jobs";
 
 const getJobs = async () => {
   try {
