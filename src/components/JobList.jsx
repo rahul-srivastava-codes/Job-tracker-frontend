@@ -1,15 +1,15 @@
 import React, { useEffect, useState } from "react";
-import jobService from "../services/JobService";
-import JobCard from "./JobCard"; // assumes you have a JobCard component
+import jobService from "../services/jobService";
+import JobCard from "./JobCard";
 
 const JobList = () => {
   const [jobs, setJobs] = useState([]);
 
   const fetchJobs = async () => {
     try {
-      const res = await jobService.getJobs();
-      console.log("Jobs fetched:", res.data); // ✅ optional for debug
-      setJobs(res.data); // ✅ data is an array directly
+      const data = await jobService.getJobs();
+      console.log("Jobs fetched:", data);
+      setJobs(data);
     } catch (err) {
       console.error("Error fetching jobs:", err);
       setJobs([]);
