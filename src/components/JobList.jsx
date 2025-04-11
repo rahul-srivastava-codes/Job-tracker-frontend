@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import jobService from "../services/jobService";
+import jobService from "../services/JobService";
 import JobCard from "./JobCard";
 
 const JobList = () => {
